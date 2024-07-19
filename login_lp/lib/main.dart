@@ -1,6 +1,6 @@
-import 'package:app_autenticacion/my_routes.dart';
+import 'package:login_lp/routas.dart';
 import 'package:flutter/material.dart';
-import 'package:app_autenticacion/my_router.dart';
+
 
 void main() {
   runApp(const MyApp());
