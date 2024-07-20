@@ -6,6 +6,7 @@ class Bienvenida extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize= MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.blueGrey[50], 
       body: Center(
@@ -14,28 +15,28 @@ class Bienvenida extends StatelessWidget {
             borderRadius: BorderRadius.circular(16.0),
           ),
           elevation: 8, 
-          margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
+          margin: EdgeInsets.symmetric(horizontal: screenSize.width * 0.05, vertical: screenSize.height * 0.05),
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(screenSize.width * 0.05),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
+                 Text(
                   'Comencemos',
                   style: TextStyle(
-                    fontSize: 50,
+                    fontSize: screenSize.width * 0.1,
                     fontWeight: FontWeight.bold,
                     color: Colors.blueGrey,
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: screenSize.height * 0.02),
                 const Icon(
                   Icons.account_circle,
                   size: 150,
                   color: Colors.blueGrey,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -46,13 +47,13 @@ class Bienvenida extends StatelessWidget {
                       icon: const Icon(Icons.person_2), 
                       label: const Text('Iniciar sesión'),
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white, backgroundColor: Colors.blueGrey, minimumSize: const Size(160, 50), 
+                        foregroundColor: Colors.white, backgroundColor: Colors.blueGrey, minimumSize: Size(screenSize.width * 0.05, 50), 
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
                     ),
-                    const SizedBox(width: 10),
+                    SizedBox(width: screenSize.width * 0.01),
                     ElevatedButton.icon(
                       onPressed: () {
                         Navigator.pushReplacementNamed(context, MyRoutes.registro.name);
@@ -60,7 +61,7 @@ class Bienvenida extends StatelessWidget {
                       icon: const Icon(Icons.login), 
                       label: const Text('Registrarse'),
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white, minimumSize: const Size(160, 50), backgroundColor: Colors.blueGrey, 
+                        foregroundColor: Colors.white, minimumSize: Size(screenSize.width * 0.05, 50), backgroundColor: Colors.blueGrey, 
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12), 
                         ),

@@ -11,9 +11,11 @@ class Autenticacion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Map<String, String> args= ModalRoute.of(context)!.settings.arguments as Map<String, String>;
-    final String savedEmail = args['email']!;
-    final String savedPassword = args['password']!;
+    final Map<String?, String?>? args=ModalRoute.of(context)?.settings.arguments as Map<String?, String?>?;
+    args?.putIfAbsent('email', () => 'usuario@unah.edu.hn');
+    args?.putIfAbsent('password', () => 'Contraseña*');
+    final String? savedEmail = args?['email'];
+    final String? savedPassword = args?['password'];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Iniciar sesión'),
@@ -23,7 +25,7 @@ class Autenticacion extends StatelessWidget {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             emailController.clear();
-            Navigator.pushReplacementNamed(context, MyRoutes.bienvenida.name);
+            Navigator.pushReplacementNamed(context, MyRoutes.bienvenida.name, arguments: {'email' : emailController.text});
           },
         ),
       ),
@@ -98,8 +100,9 @@ class Autenticacion extends StatelessWidget {
                           ElevatedButton(
                             onPressed: () {
                               if (formKey.currentState!.validate()) {
-                                if (emailController.text == savedEmail &&
-                                    passwordController.text == savedPassword) {
+                                if ((emailController.text == savedEmail &&
+                                    passwordController.text == savedPassword)|| (emailController.text=='usuario@unah.edu.hn' 
+                                    && passwordController.text== 'Contraseña*')) {
                                   Navigator.pushReplacementNamed(context, MyRoutes.pantallafinal.name);
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(

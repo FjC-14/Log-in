@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_lp/autenticacion.dart';
 import 'package:login_lp/bienvenida.dart';
+import 'package:login_lp/pantallafinal.dart';
 import 'package:login_lp/registro.dart';
 
 
