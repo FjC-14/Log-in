@@ -25,7 +25,7 @@ class Autenticacion extends StatelessWidget {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             emailController.clear();
-            Navigator.pushReplacementNamed(context, MyRoutes.bienvenida.name, arguments: {'email' : emailController.text});
+            Navigator.pushReplacementNamed(context, MyRoutes.bienvenida.name, arguments: emailController.text);
           },
         ),
       ),
