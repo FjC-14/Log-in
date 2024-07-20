@@ -22,7 +22,7 @@ class Bienvenida extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Bienvenido',
+                  'Comencemos',
                   style: TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.bold,
