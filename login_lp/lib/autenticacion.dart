@@ -103,7 +103,7 @@ class Autenticacion extends StatelessWidget {
                                 if ((emailController.text == savedEmail &&
                                     passwordController.text == savedPassword)|| (emailController.text=='usuario@unah.edu.hn' 
                                     && passwordController.text== 'Contraseña*')) {
-                                  Navigator.pushReplacementNamed(context, MyRoutes.pantallafinal.name);
+                                  Navigator.pushReplacementNamed(context, MyRoutes.pantallafinal.name, arguments: emailController.text);
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
