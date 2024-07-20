@@ -17,7 +17,7 @@ class PantallaFinal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      final String? email = ModalRoute.of(context)?.settings.arguments as String?;
-    final String displayEmail = email ?? 'usuario@example.com';
+    final String displayEmail = email ?? 'usuario@unah.edu.hn';
 
     return Scaffold(
       appBar: AppBar(
